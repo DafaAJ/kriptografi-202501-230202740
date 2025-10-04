@@ -95,12 +95,9 @@ Praktikum minggu pertama menekankan pemahaman sejarah kriptografi dari era klasi
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit 65886b44e29e421fb2db6409ae5561743b51ee2b (HEAD -> main, origin/main, origin/HEAD)commit abc12345
+Author: Dafa Afriza J <dafaafrizaj@gmail.com>
+Date:   Sat Oct 4 11:29:02 2025 +0700
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+     week1-intro-cia
 ```
