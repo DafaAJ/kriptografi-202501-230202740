@@ -136,12 +136,8 @@ Dari hasil praktikum yang telah dilakukan, dapat disimpulkan bahwa proses enkrip
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit 5f57b0d51aa492c91dfb34749ed4caa703652451 (HEAD -> main, origin/main, origin/HEAD)
+Author: Dafa Afriza J <dafaafrizaj@gmail.com>
+Date:   Sat Oct 11 15:27:45 2025 +0700
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
-```
+    feet: update week2-cryptosystem page
