@@ -122,12 +122,9 @@ Dari praktikum ini dapat disimpulkan bahwa aritmetika modular merupakan dasar pe
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit 6b4f13ef1d302732bd24d6021e29f7b99d1262af (HEAD -> main, origin/main, origin/HEAD)
+Author: Dafa Afriza J <dafaafrizaj@gmail.com>
+Date:   Fri Oct 17 21:12:45 2025 +0700
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week3-modmath-gcd
 ```
