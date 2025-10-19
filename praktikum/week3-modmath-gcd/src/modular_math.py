@@ -3,10 +3,16 @@ def mod_sub(a, b, n): return (a - b) % n
 def mod_mul(a, b, n): return (a * b) % n
 def mod_exp(base, exp, n): return pow(base, exp, n)
 
+print("7 + 5 mod 12 =", mod_add(7, 5, 12))
+print("7 * 5 mod 12 =", mod_mul(7, 5, 12))
+print("7^128 mod 13 =", mod_exp(7, 128, 13))
+
 def gcd(a, b):
     while b != 0:
         a, b = b, a % b
     return a
+
+print("gcd(54, 24) =", gcd(54, 24))
 
 def egcd(a, b):
     if a == 0:
@@ -20,20 +26,12 @@ def modinv(a, n):
         return None
     return x % n
 
+print("Invers 3 mod 11 =", modinv(3, 11))
+
 def discrete_log(a, b, n):
     for x in range(n):
         if pow(a, x, n) == b:
             return x
     return None
 
-print("=== Aritmetika Modular ===")
-print("7 + 5 mod 12 =", mod_add(7, 5, 12))
-print("7 * 5 mod 12 =", mod_mul(7, 5, 12))
-print("7^128 mod 13 =", mod_exp(7, 128, 13))
-
-print("\n=== GCD dan Invers Modular ===")
-print("gcd(54, 24) =", gcd(54, 24))
-print("Invers 3 mod 11 =", modinv(3, 11))
-
-print("\n=== Logaritma Diskrit ===")
 print("3^x ≡ 4 (mod 7), x =", discrete_log(3, 4, 7))
