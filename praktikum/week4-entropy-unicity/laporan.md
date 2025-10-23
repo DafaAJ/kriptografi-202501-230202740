@@ -107,12 +107,8 @@ Dari percobaan ini dapat disimpulkan bahwa semakin besar ruang kunci, semakin ti
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
-```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit a417023588ca4e6b7c0e475ed3102da37d71343a (HEAD -> main, origin/main, origin/HEAD)
+Author: Dafa Afriza J <dafaafrizaj@gmail.com>
+Date:   Thu Oct 23 20:29:58 2025 +0700
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
-```
+    week4-entropy-unicity
