@@ -22,10 +22,10 @@ def transpose_decrypt(ciphertext, key=5):
             row += 1
     return ''.join(plaintext)
 
+# Contoh uji
 msg = "TRANSPOSITIONCIPHER"
 enc = transpose_encrypt(msg, key=5)
 dec = transpose_decrypt(enc, key=5)
-
 print("Plaintext :", msg)
 print("Ciphertext:", enc)
 print("Decrypted :", dec)

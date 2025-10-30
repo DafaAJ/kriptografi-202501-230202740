@@ -11,11 +11,11 @@ def caesar_encrypt(plaintext, key):
 def caesar_decrypt(ciphertext, key):
     return caesar_encrypt(ciphertext, -key)
 
+# Contoh uji
 msg = "CLASSIC CIPHER"
 key = 3
 enc = caesar_encrypt(msg, key)
 dec = caesar_decrypt(enc, key)
-
 print("Plaintext :", msg)
 print("Ciphertext:", enc)
 print("Decrypted :", dec)

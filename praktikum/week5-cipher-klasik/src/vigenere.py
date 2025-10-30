@@ -26,11 +26,11 @@ def vigenere_decrypt(ciphertext, key):
             result.append(char)
     return "".join(result)
 
+# Contoh uji
 msg = "KRIPTOGRAFI"
 key = "KEY"
 enc = vigenere_encrypt(msg, key)
 dec = vigenere_decrypt(enc, key)
-
 print("Plaintext :", msg)
 print("Ciphertext:", enc)
 print("Decrypted :", dec)
