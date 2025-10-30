@@ -189,9 +189,9 @@ Namun demikian, cipher klasik memiliki kelemahan signifikan karena pola huruf ma
 
 ## 10. Commit Log
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit b6bcceddcb58b37537470b17b9db9928e369d6f1 (HEAD -> main, origin/main, origin/HEAD)
+Author: Dafa Afriza J <dafaafrizaj@gmail.com>
+Date:   Thu Oct 30 10:51:13 2025 +0700
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan
+    week5-cipher-klasik
 ```
