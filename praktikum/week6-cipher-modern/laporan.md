@@ -1,14 +1,16 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 6  
+Topik: Chiper Modern (DES, AES, RSA)  
+Nama: Dafa Afriza Julianto  
+NIM: 230202740  
+Kelas: 5IKRB  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Mengimplementasi algoritma **DES** untuk blok data sederhana.
+2. Menerapkan algoritma **AES** dengan panjang kunci 128 bit.
+3. Menjelaskan proses pembangkitan kunci publik dan privat pada algoritma **RSA**.
 
 ---
 
@@ -19,32 +21,83 @@ Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
+(- Python 3.12.10  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Library tambahan (pycryptodome)  )
 
 ---
 
 ## 4. Langkah Percobaan
 (Tuliskan langkah yang dilakukan sesuai instruksi.  
 Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `aes.py, rsa.py, des.py` di folder `praktikum/week6-cipher-modern/src/`.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program dengan perintah `python aes.py, python rsa.py, python des.py`.)
 
 ---
 
 ## 5. Source Code
-(Salin kode program utama yang dibuat atau dimodifikasi.  
-Gunakan blok kode:
+Source Code des.py
 
 ```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
+from Crypto.Cipher import DES
+from Crypto.Random import get_random_bytes
+
+key = get_random_bytes(8)  # kunci 64 bit (8 byte)
+cipher = DES.new(key, DES.MODE_ECB)
+
+plaintext = b"ABCDEFGH"
+ciphertext = cipher.encrypt(plaintext)
+print("Ciphertext:", ciphertext)
+
+decipher = DES.new(key, DES.MODE_ECB)
+decrypted = decipher.decrypt(ciphertext)
+print("Decrypted:", decrypted)
 ```
-)
+
+Source Code aes.py
+
+```python
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
+
+key = get_random_bytes(16)  # 128 bit key
+cipher = AES.new(key, AES.MODE_EAX)
+
+plaintext = b"Modern Cipher AES Example"
+ciphertext, tag = cipher.encrypt_and_digest(plaintext)
+
+print("Ciphertext:", ciphertext)
+
+# Dekripsi
+cipher_dec = AES.new(key, AES.MODE_EAX, nonce=cipher.nonce)
+decrypted = cipher_dec.decrypt(ciphertext)
+print("Decrypted:", decrypted.decode())
+```
+
+Source Code rsa.py
+
+```python
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+
+# Generate key pair
+key = RSA.generate(2048)
+private_key = key
+public_key = key.publickey()
+
+# Enkripsi dengan public key
+cipher_rsa = PKCS1_OAEP.new(public_key)
+plaintext = b"RSA Example"
+ciphertext = cipher_rsa.encrypt(plaintext)
+print("Ciphertext:", ciphertext)
+
+# Dekripsi dengan private key
+decipher_rsa = PKCS1_OAEP.new(private_key)
+decrypted = decipher_rsa.decrypt(ciphertext)
+print("Decrypted:", decrypted.decode())
+```
 
 ---
 
@@ -56,9 +109,9 @@ def encrypt(text, key):
 
 Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
+![Hasil AES](screenshots/aes.png)
+![Hasil DES](screenshots/des.png)
+![Hasil RSA](screenshots/rsa.png)
 )
 
 ---
