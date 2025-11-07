@@ -169,6 +169,7 @@ Hasil eksekusi program Cipher Klasik:
   Jawab: Karena pola kemunculan huruf pada ciphertext masih mencerminkan pola bahasa aslinya. Huruf yang sering muncul seperti “E” dalam bahasa Inggris tetap memiliki frekuensi tinggi meskipun dienkripsi, sehingga penyerang dapat menebak substitusi huruf. 
 - Pertanyaan 3: Bandingkan kelebihan dan kelemahan cipher substitusi vs transposisi.
   Jawab: Cipher substitusi mengganti karakter tetapi mempertahankan urutan, sedangkan cipher transposisi mempertahankan karakter asli namun mengubah urutan. Substitusi lebih sederhana tapi mudah dipetakan dengan analisis frekuensi, sedangkan transposisi lebih sulit dianalisis tapi mudah dipecahkan jika pola pengurutan diketahui.  
+  
 ---
 
 ## 8. Kesimpulan

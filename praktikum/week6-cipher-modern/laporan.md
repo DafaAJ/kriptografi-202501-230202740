@@ -15,8 +15,13 @@ Kelas: 5IKRB
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Cipher modern merupakan sistem kriptografi yang digunakan untuk melindungi data digital dengan tingkat keamanan tinggi. Berbeda dengan cipher klasik yang berbasis pada substitusi dan transposisi sederhana, cipher modern menggunakan operasi matematika kompleks dan kunci dengan panjang bit yang besar.
+
+DES (Data Encryption Standard) adalah algoritma simetris berbasis blok 64-bit yang menggunakan kunci sepanjang 56 bit. Meskipun dulu menjadi standar, DES kini dianggap kurang aman karena dapat ditembus dengan brute force.
+
+AES (Advanced Encryption Standard) menggantikan DES sebagai standar modern. AES menggunakan ukuran blok 128 bit dan mendukung panjang kunci 128, 192, atau 256 bit. Algoritma ini berbasis operasi substitusi, permutasi, dan transformasi matriks pada Galois Field.
+
+RSA (Rivest–Shamir–Adleman) adalah algoritma asimetris yang menggunakan pasangan kunci publik dan privat. Keamanannya bergantung pada kesulitan faktorisasi bilangan besar. RSA sering digunakan untuk pertukaran kunci atau tanda tangan digital.
 
 ---
 
@@ -117,22 +122,22 @@ Hasil eksekusi program Caesar Cipher:
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+- Pertanyaan 1: Apa perbedaan mendasar antara DES, AES, dan RSA dalam hal kunci dan keamanan?
+  Jawab: DES dan AES termasuk algoritma simetris, menggunakan satu kunci yang sama untuk enkripsi dan dekripsi. RSA termasuk asimetris, memakai pasangan kunci publik dan privat. Dari segi keamanan, AES jauh lebih kuat daripada DES karena panjang kuncinya lebih besar (128–256 bit), sedangkan RSA mengandalkan kompleksitas faktorisasi bilangan besar.
+- Pertanyaan 2: Mengapa AES lebih banyak digunakan dibanding DES di era modern? 
+  Jawab: Karena AES memiliki kecepatan yang lebih tinggi, efisiensi yang lebih baik pada perangkat keras maupun lunak, serta tingkat keamanan yang jauh lebih tinggi. DES sudah dapat ditembus dengan brute force, sedangkan AES masih sangat aman hingga saat ini. 
+- Pertanyaan 3: Mengapa RSA dikategorikan sebagai algoritma asimetris, dan bagaimana proses pembangkitan kuncinya?
+  Jawab: RSA disebut asimetris karena menggunakan dua kunci berbeda: kunci publik untuk enkripsi dan kunci privat untuk dekripsi. Proses pembangkitan kuncinya dilakukan dengan memilih dua bilangan prima besar (p dan q), menghitung modulus 𝑛 = 𝑝 × 𝑞, menentukan eksponen publik 𝑒, dan menghitung eksponen privat 𝑑 sebagai invers dari 𝑒 terhadap 𝜙(𝑛).  
+
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Dari percobaan ini dapat disimpulkan bahwa algoritma DES, AES, dan RSA memiliki perbedaan mendasar pada jenis kunci dan tingkat keamanan. AES dan DES merupakan cipher simetris, sedangkan RSA adalah cipher asimetris. AES lebih unggul dalam efisiensi dan keamanan modern, sementara RSA penting dalam sistem autentikasi dan distribusi kunci.
 
 ---
 
 ## 9. Daftar Pustaka
-(Cantumkan referensi yang digunakan.  
-Contoh:  
-- Katz, J., & Lindell, Y. *Introduction to Modern Cryptography*.  
-- Stallings, W. *Cryptography and Network Security*.  )
+-
 
 ---
 
