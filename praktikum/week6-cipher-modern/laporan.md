@@ -142,12 +142,10 @@ Dari percobaan ini dapat disimpulkan bahwa algoritma DES, AES, dan RSA memiliki 
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit 730ce3b134337e2a9afde3986568229cc095db28 (HEAD -> main, origin/main, origin/HEAD)
+Author: Dafa Afriza J <dafaafrizaj@gmail.com>
+Date:   Fri Nov 7 19:41:43 2025 +0700
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week6-cipher-modern
 ```
