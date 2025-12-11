@@ -27,16 +27,16 @@ Sertifikat digital banyak digunakan dalam HTTPS/TLS. Ketika pengguna mengakses s
 (- Python 3.12.10  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Library tambahan (cryptography dan pyOpenSSL)  )
 
 ---
 
 ## 4. Langkah Percobaan
 (Tuliskan langkah yang dilakukan sesuai instruksi.  
 Contoh format:
-1. Membuat file `caesar_cipher.py` di folder `praktikum/week2-cryptosystem/src/`.
+1. Membuat file `pki_cert.py` di folder `praktikum/week10-pki/src/`.
 2. Menyalin kode program dari panduan praktikum.
-3. Menjalankan program dengan perintah `python caesar_cipher.py`.)
+3. Menjalankan program dengan perintah `python pki_cert.py`.)
 
 ---
 
@@ -45,9 +45,39 @@ Contoh format:
 Gunakan blok kode:
 
 ```python
-# contoh potongan kode
-def encrypt(text, key):
-    return ...
+from cryptography import x509
+from cryptography.x509.oid import NameOID
+from cryptography.hazmat.primitives import hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import rsa
+from datetime import datetime, timedelta
+
+# Generate key pair
+key = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+
+# Buat subject & issuer (CA sederhana = self-signed)
+subject = issuer = x509.Name([
+    x509.NameAttribute(NameOID.COUNTRY_NAME, u"ID"),
+    x509.NameAttribute(NameOID.ORGANIZATION_NAME, u"UPB Kriptografi"),
+    x509.NameAttribute(NameOID.COMMON_NAME, u"example.com"),
+])
+
+# Buat sertifikat
+cert = (
+    x509.CertificateBuilder()
+    .subject_name(subject)
+    .issuer_name(issuer)
+    .public_key(key.public_key())
+    .serial_number(x509.random_serial_number())
+    .not_valid_before(datetime.utcnow())
+    .not_valid_after(datetime.utcnow() + timedelta(days=365))
+    .sign(key, hashes.SHA256())
+)
+
+# Simpan sertifikat
+with open("cert.pem", "wb") as f:
+    f.write(cert.public_bytes(serialization.Encoding.PEM))
+
+print("Sertifikat digital berhasil dibuat: cert.pem")
 ```
 )
 
@@ -61,22 +91,24 @@ def encrypt(text, key):
 
 Hasil eksekusi program Caesar Cipher:
 
-![Hasil Eksekusi](screenshots/output.png)
-![Hasil Input](screenshots/input.png)
-![Hasil Output](screenshots/output.png)
+![Hasil Eksekusi](screenshots/hasil.png)
+![Hasil Cert](screenshots/hasil2.png)
 )
 
 ---
 
 ## 7. Jawaban Pertanyaan
-(Jawab pertanyaan diskusi yang diberikan pada modul.  
-- Pertanyaan 1: …  
-- Pertanyaan 2: …  
-)
+- Pertanyaan 1: Apa fungsi utama Certificate Authority (CA)?  
+  CA berfungsi sebagai pihak tepercaya yang menerbitkan dan memvalidasi sertifikat digital. CA mengikat identitas pemilik sertifikat dengan public key, lalu menandatangani sertifikat tersebut sehingga sistem lain dapat memverifikasi keasliannya.
+- Pertanyaan 2: Mengapa self-signed certificate tidak cukup untuk sistem produksi?    
+  Karena self-signed certificate tidak ditandatangani CA tepercaya. Browser atau sistem lain tidak dapat memastikan apakah sertifikat tersebut berasal dari sumber sah, sehingga rawan spoofing dan serangan MITM. Sertifikat produksi harus diterbitkan oleh CA resmi.
+- Pertanyaan 3: Bagaimana PKI mencegah serangan MITM dalam komunikasi TLS/HTTPS?  
+  PKI menyediakan cara bagi browser untuk memverifikasi identitas server melalui sertifikat digital. Jika penyerang mencoba menyisipkan sertifikat palsu, browser akan menolak karena tidak ditandatangani CA tepercaya. Dengan demikian, MITM gagal karena penyerang tidak memiliki private key server yang sah.
+
 ---
 
 ## 8. Kesimpulan
-(Tuliskan kesimpulan singkat (2–3 kalimat) berdasarkan percobaan.  )
+Pada praktikum ini berhasil dibuat sertifikat digital sederhana menggunakan library cryptography. Proses pembuatan dan pembacaan sertifikat memberikan pemahaman bahwa PKI sangat penting dalam komunikasi aman, terutama untuk validasi identitas dan pencegahan serangan MITM. Peran CA sangat krusial karena menjadi sumber kepercayaan utama dalam ekosistem PKI.
 
 ---
 
