@@ -27,7 +27,7 @@ Tanda tangan digital banyak digunakan dalam keamanan jaringan modern, termasuk s
 (- Python 3.12.10  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
-- Library tambahan (misalnya pycryptodome, jika diperlukan)  )
+- Library tambahan (pycryptodome)  )
 
 ---
 
@@ -119,12 +119,10 @@ Contoh:
 ---
 
 ## 10. Commit Log
-(Tuliskan bukti commit Git yang relevan.  
-Contoh:
 ```
-commit abc12345
-Author: Nama Mahasiswa <email>
-Date:   2025-09-20
+commit c52b4077c8921e34c548e13b460c4d93121934e7 (HEAD -> main, origin/main, origin/HEAD)
+Author: Dafa Afriza J <dafaafrizaj@gmail.com>
+Date:   Thu Dec 11 22:56:03 2025 +0700
 
-    week2-cryptosystem: implementasi Caesar Cipher dan laporan )
+    week9-digital-signature
 ```

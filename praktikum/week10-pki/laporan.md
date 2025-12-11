@@ -1,25 +1,30 @@
 # Laporan Praktikum Kriptografi
-Minggu ke-: X  
-Topik: [judul praktikum]  
-Nama: [Nama Mahasiswa]  
-NIM: [NIM Mahasiswa]  
-Kelas: [Kelas]  
+Minggu ke-: 10  
+Topik: Public Key Infrastructure (PKI & Certificate Authority)  
+Nama: Dafa Afriza Julianto  
+NIM: 230202740  
+Kelas: 5IKRB  
 
 ---
 
 ## 1. Tujuan
-(Tuliskan tujuan pembelajaran praktikum sesuai modul.)
+1. Membuat sertifikat digital sederhana.  
+2. Menjelaskan peran Certificate Authority (CA) dalam sistem PKI.  
+3. Mengevaluasi fungsi PKI dalam komunikasi aman (contoh: HTTPS, TLS). 
 
 ---
 
 ## 2. Dasar Teori
-(Ringkas teori relevan (cukup 2–3 paragraf).  
-Contoh: definisi cipher klasik, konsep modular aritmetika, dll.  )
+Public Key Infrastructure (PKI) adalah sistem yang digunakan untuk mengelola pasangan kunci publik–privat serta menerbitkan sertifikat digital. Sertifikat digital mengikat identitas (nama domain, organisasi, negara) dengan sebuah public key, dan biasanya diterbitkan oleh Certificate Authority (CA). PKI memastikan bahwa entitas yang terhubung dalam komunikasi memiliki identitas yang sah dan dapat dipercaya.
+
+Certificate Authority (CA) adalah lembaga terpercaya yang bertugas menerbitkan dan memverifikasi sertifikat digital. CA menandatangani sertifikat menggunakan private key mereka sehingga browser atau sistem lain dapat memverifikasi sertifikat tersebut menggunakan public key CA. Dengan cara ini, PKI mendukung keaslian, integritas, dan non-repudiation dalam komunikasi aman.
+
+Sertifikat digital banyak digunakan dalam HTTPS/TLS. Ketika pengguna mengakses situs web, browser memeriksa apakah sertifikat situs tersebut valid, tidak kedaluwarsa, tidak dicabut, dan ditandatangani oleh CA yang terpercaya. Tanpa PKI, komunikasi online rawan terhadap serangan seperti man-in-the-middle (MITM) atau spoofing.
 
 ---
 
 ## 3. Alat dan Bahan
-(- Python 3.x  
+(- Python 3.12.10  
 - Visual Studio Code / editor lain  
 - Git dan akun GitHub  
 - Library tambahan (misalnya pycryptodome, jika diperlukan)  )
