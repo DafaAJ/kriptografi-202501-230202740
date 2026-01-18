@@ -64,8 +64,8 @@ Dari hasil pengujian, ditemukan bahwa password sederhana seperti "123456" dan "p
 
 Contoh Hasil Eksekusi
 
-* Input password: 123456
-* Output hash MD5: e10adc3949ba59abbe56e057f20f883e
+* Input password: Cihuyy
+* Output hash MD5: 06f1ebb65044183303fa3d884b7dc418
 
 Hash tersebut dapat ditemukan dengan mudah di database hash publik.
 
